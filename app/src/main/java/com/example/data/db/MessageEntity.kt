@@ -1,0 +1,12 @@
+package com.example.data.db
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "messages")
+data class MessageEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0L,
+    val text: String,
+    val sender: String, // "user" or "jarvis"
+    val timestamp: Long = System.currentTimeMillis()
+)
